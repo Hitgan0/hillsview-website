@@ -36,7 +36,7 @@ public class OrderJdbcTemplateRepository implements OrderRepository {
 
     @Override
     public Order add(Order order) {
-        final String sql = "insert into orders (full_name, address, email, order_date, total, order_status, cash_on_delivery " +
+        final String sql = "insert into orders (full_name, address, email, order_date, total, order_status, cash_on_delivery) " +
                 "values(?, ?, ?, ?, ?, ?, ?);";
 
         KeyHolder keyHolder = new GeneratedKeyHolder();
