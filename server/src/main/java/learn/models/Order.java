@@ -8,6 +8,7 @@ public class Order {
     private int orderId;
     private String fullName;
     private String address;
+    private String email;
     private LocalDate orderDate;
     private BigDecimal total;
     private Status status;
@@ -35,6 +36,14 @@ public class Order {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public LocalDate getOrderDate() {

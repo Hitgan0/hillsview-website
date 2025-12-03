@@ -15,7 +15,7 @@ public class OrderJdbcTemplateRepository implements OrderRepository {
 
     @Override
     public List<Order> findAll() {
-        final String sql = "select order_id, full_name, address, order_date, total, order_status, cash_on_delivery " +
+        final String sql = "select order_id, full_name, address, email, order_date, total, order_status, cash_on_delivery " +
                 "from orders;";
 
         return jdbcTemplate.query(sql, new OrderMapper());
