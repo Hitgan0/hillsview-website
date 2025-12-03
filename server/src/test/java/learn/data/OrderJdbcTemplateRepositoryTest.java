@@ -28,4 +28,12 @@ class OrderJdbcTemplateRepositoryTest {
         assertEquals(4, orders.size());
     }
 
+    @Test
+    void shouldFindById() {
+        Order order = repository.findById(1);
+        assertEquals(1, order.getOrderId());
+        assertEquals("John Doe", order.getFullName());
+        assertEquals("111 1st st, Town, NY, 11111", order.getAddress());
+    }
+
 }
