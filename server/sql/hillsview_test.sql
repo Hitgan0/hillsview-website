@@ -4,7 +4,7 @@ use hillsview_test;
 
 create table orders (
 	order_id int primary key auto_increment,
-    fullname varchar (150) not null,
+    full_name varchar (150) not null,
     address varchar (250) not null,
     order_date date not null,
     total decimal(10, 2) not null,
