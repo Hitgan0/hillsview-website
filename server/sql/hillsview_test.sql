@@ -50,7 +50,12 @@ begin
 		('Mary Sue', "222 2nd st, Town, NY, 22222", "sue@email.com", '2002-02-02', 12, "PROCESSING", false),
 		('Peter Parker', "333 3rd st, Town, NY, 33333", "parker@email.com", '2003-03-03', 15, "SHIPPED", true),
 		('Bruce Wayne', "444 4th st, Town, NY, 44444", "wayne@email.com", '2004-04-04', 18, "COMPLETE", true);
-
+	
+    insert into products (product_name, price, quantity)
+    values
+		('Apple', 5.50, 50),
+        ('Banana', 6.60, 60),
+        ('Orange', 7.70, 70);
   set sql_safe_updates = 1;
 end //
 delimiter ;
