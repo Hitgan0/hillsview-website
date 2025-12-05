@@ -63,11 +63,29 @@ public class OrderJdbcTemplateRepository implements OrderRepository {
 
     @Override
     public boolean update(Order order) {
-        return false;
+        final String sql = "update orders set "
+                + "full_name = ?, "
+                + "address = ?, "
+                + "email = ?, "
+                + "order_date = ?, "
+                + "total = ?, "
+                + "order_status = ?, "
+                + "cash_on_delivery = ? "
+                + "where order_id = ?;";
+
+        return jdbcTemplate.update(sql,
+                order.getFullName(),
+                order.getAddress(),
+                order.getEmail(),
+                order.getOrderDate(),
+                order.getTotal(),
+                order.getStatus().name(),
+                order.isCashOnDelivery(),
+                order.getOrderId()) > 0;
     }
 
     @Override
     public boolean deleteById(int orderId) {
-        return false;
+        return jdbcTemplate.update("delete from orders where order_id = ?;", orderId) > 0;
     }
 }

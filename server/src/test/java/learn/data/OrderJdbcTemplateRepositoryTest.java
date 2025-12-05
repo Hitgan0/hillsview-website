@@ -52,6 +52,21 @@ class OrderJdbcTemplateRepositoryTest {
         System.out.println(actual.getFullName());
     }
 
+    @Test
+    void shouldUpdate() {
+        Order order = makeOrder();
+        order.setOrderId(2);
+        assertTrue(repository.update(order));
+        order.setOrderId(999);
+        assertFalse(repository.update(order));
+    }
+
+    @Test
+    void shouldDelete() {
+        assertTrue(repository.deleteById(3));
+        assertFalse(repository.deleteById(3));
+    }
+
     private Order makeOrder() {
         Order order = new Order();
         order.setFullName("Princess Diana");
